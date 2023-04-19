@@ -2,7 +2,7 @@
 
 /* eslint-disable prettier/prettier */
 import { IsIn, IsOptional } from "class-validator";
-import { TaskStatus } from "../task.model";
+import { TaskStatus } from "../task-status.enum";
 import { IsNotEmpty } from 'class-validator';
 
 
