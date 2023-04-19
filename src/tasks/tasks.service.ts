@@ -8,12 +8,13 @@ import { start } from 'repl';
 import { TaskRepository } from './task.repository';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Task } from './task.entity';
+import { TaskStatus } from './task-status.enum';
 
 @Injectable()
 export class TasksService {
   constructor(
-    @InjectRepository(Task)
-    private taskRepository: Repository<Task>
+    @InjectRepository(TaskRepository)
+    private taskRepository: TaskRepository
   ) {}
 
  /*  getAllTasks(): Task[] {
@@ -47,6 +48,9 @@ export class TasksService {
     return foundTask;
   }
 
+  async createTask(createTaskDto: CreateTaskDTO): Promise<Task>{
+    return this.taskRepository.createTask(createTaskDto)
+  }
 
   /* createTask(createTaskDto: CreateTaskDTO): Task {
 
@@ -61,13 +65,14 @@ export class TasksService {
     this.tasks.push(task);
     return task;
   }
-
-  deleteTaskById(id: string): void {
-    const foundTask = this.getTaskById(id);
-    this.tasks = this.tasks.filter(task => task.id !== foundTask.id)
-
+*/
+  async deleteTaskById(id: number): Promise<void> {
+    const result = await this.taskRepository.delete(id);
+    if(result.affected === 0){
+      throw new NotFoundException(`Task with ID ${id} not found!`);
+    }
   }
-
+/*
   updateTaskStatus(id: string, status: TaskStatus): Task {
     const task = this.getTaskById(id);
     task.status = status;

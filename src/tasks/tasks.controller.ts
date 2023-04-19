@@ -27,20 +27,21 @@ export class TasksController {
         console.log(id)
         return this.taskService.getTaskById(id);
     }
-    /* @Delete('/:id')
-    deleteTaskById(@Param('id') id:string):void{
+    @Delete('/:id')
+    deleteTaskById(@Param('id', ParseIntPipe) id:number){
+    
         return this.taskService.deleteTaskById(id);
     }
-
+/*
     @Patch('/:id/status')
     updateTaskStatus(@Param('id') id:string,@Body('status', TaskStatusValidationPipe) status: TaskStatus):Task{
         return this.taskService.updateTaskStatus(id, status);
     }
-
+*/
     @Post()
     @UsePipes(ValidationPipe)
-    createTask(@Body() createTaskDto: CreateTaskDTO) {
-
+    createTask(@Body() createTaskDto: CreateTaskDTO): Promise<Task> {
+        
         return this.taskService.createTask(createTaskDto);
-    } */
+    } 
 }
