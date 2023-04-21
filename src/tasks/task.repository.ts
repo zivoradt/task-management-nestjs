@@ -3,14 +3,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable prettier/prettier */
 // eslint-disable-next-line prettier/prettier
-import { DataSource, EntityRepository, Repository } from "typeorm";
+import { DataSource, Repository } from "typeorm";
 import { Task } from './task.entity'
 import { Injectable } from "@nestjs/common";
 import { CreateTaskDTO } from "./dto/create-task.dto";
-import { InjectRepository } from "@nestjs/typeorm";
 import { TaskStatus } from "./task-status.enum";
 import { GetTaskFilterDto } from "./dto/get-task-filters.dto";
-import { stat } from "fs";
 
 
 

@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { TypeOrmModuleOptions } from "@nestjs/typeorm";
 
+
 export const typeOrmConfig: TypeOrmModuleOptions = {
     type: 'postgres',
     host: 'localhost',
@@ -8,7 +9,7 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
     username: 'postgres',
     password: '54321kazi',
     database: 'taskmanagement',
-    entities: [__dirname + '/../**/*.entity.{js,ts}'],
+    entities: [__dirname + '/../**/*.entity.{js,ts}', __dirname + '/../auth/*.entity.ts'],
     synchronize: true,
     autoLoadEntities: true
 }

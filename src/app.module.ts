@@ -9,6 +9,7 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [TasksModule, TypeOrmModule.forRoot(typeOrmConfig), AuthModule],
+  
   // eslint-disable-next-line prettier/prettier
   
 })
