@@ -1,4 +1,6 @@
 /* eslint-disable prettier/prettier */
+import { Task } from './../tasks/task.entity';
+/* eslint-disable prettier/prettier */
 import { Entity, Unique } from 'typeorm';
 /* eslint-disable prettier/prettier */
 import { Column, PrimaryGeneratedColumn } from 'typeorm';
@@ -19,6 +21,9 @@ export class User extends BaseEntity {
 
     @Column()
     salt: string
+
+    @Column('simple-array', { nullable: true })
+    tasks: string[];
 
     async validatePassword(password: string): Promise<boolean> {
         const hash = await bcrypt.hash(password, this.salt);
