@@ -6,6 +6,8 @@ This is a task management application built with React.
 
 Before running the app, make sure you have Node.js and npm or Yarn installed on your machine.
 
+
+
 To install the project dependencies, run the following command:
 
 bash
@@ -33,6 +35,42 @@ npm run build or yarn build: Builds the app for production.
 npm test or yarn test: Runs the tests.
 npm run eject or yarn eject: Ejects the app from Create React App.
 Please note that the app requires Node.js version v12.13.0.
+
+-------------------------------------------------------------------------------
+
+# Backend
+
+## Installation
+
+```bash
+$ yarn install
+```
+
+## Running the app
+
+```bash
+# development
+$ yarn run start
+
+# watch mode
+$ yarn run start:dev
+
+# production mode
+$ yarn run start:prod
+```
+
+## Test
+
+```bash
+# unit tests
+$ yarn run test
+
+# e2e tests
+$ yarn run test:e2e
+
+# test coverage
+$ yarn run test:cov
+```
 
 # Contributing
 Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
