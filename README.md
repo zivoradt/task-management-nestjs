@@ -8,7 +8,7 @@ Before running the app, make sure you have Node.js and npm or Yarn installed on 
 
 To install the project dependencies, run the following command:
 
-```bash
+bash
 npm install
 
 
